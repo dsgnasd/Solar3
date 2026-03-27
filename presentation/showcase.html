@@ -949,6 +949,10 @@
         <a class="nav-link" href="#bottom-sheet"><span class="nav-dot"></span>Bottom Sheet</a>
         <a class="nav-link" href="#date-picker"><span class="nav-dot"></span>Date Picker</a>
         <a class="nav-link" href="#dialog"><span class="nav-dot"></span>Dialog</a>
+        <a class="nav-link" href="#header-panel"><span class="nav-dot"></span>Header Panel</a>
+        <a class="nav-link" href="#navbar"><span class="nav-dot"></span>Navbar</a>
+        <a class="nav-link" href="#sidenav"><span class="nav-dot"></span>Sidenav</a>
+        <a class="nav-link" href="#toppanel"><span class="nav-dot"></span>Toppanel</a>
         <a class="nav-link" href="#tables"><span class="nav-dot"></span>Tables</a>
       </div>
     </nav>
@@ -2597,7 +2601,7 @@
         </div>
         <div class="comp-block" style="overflow:visible;">
           <div class="comp-block-header"><span class="comp-block-name">White Tooltip — Top</span></div>
-          <div class="comp-block-body" style="padding-top:100px; flex-wrap:wrap; gap:60px;">
+          <div class="comp-block-body" style="padding-top:100px; padding-left:120px; flex-wrap:wrap; gap:60px;">
             <div class="tooltip-wrap" id="tt1">
               <button class="btn btn-sm btn-outlined" onmouseenter="showTooltip('tt1')" onmouseleave="hideTooltip('tt1')">Hover me</button>
               <div class="tooltip" style="bottom:calc(100% + 8px); left:50%; transform:translateX(-50%); display:none;">
@@ -3087,6 +3091,391 @@
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      <!-- HEADER PANEL -->
+      <section class="section" id="header-panel">
+        <div class="section-header">
+          <div class="section-tag">Organisms</div>
+          <h2 class="section-title">Header Panel</h2>
+          <p class="section-desc">Мобильный хедер: UI Bars (44px статусбар iOS) + Header (68px заголовок + action-кнопки). Ширина 375px.</p>
+        </div>
+
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Header Panel — полная сборка (Status Bar + Header)</span></div>
+          <div class="comp-block-body" style="padding:32px;background:#e8e8e8;align-items:center;justify-content:center;">
+            <div style="display:flex;flex-direction:column;width:375px;border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.14);">
+              <!-- UI Bars (Status Bar) -->
+              <div style="position:relative;width:100%;height:44px;background:#fff;backdrop-filter:blur(5px);flex-shrink:0;">
+                <span style="position:absolute;left:47px;top:50%;transform:translateY(-50%);font-family:'SF Pro Display',sans-serif;font-weight:600;font-size:15px;color:#333740;text-align:center;width:54px;">9:41</span>
+                <div style="position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:6px;">
+                  <!-- Signal bars -->
+                  <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+                    <rect x="0" y="7" width="3" height="5" rx="1" fill="#333740"/>
+                    <rect x="4.5" y="4" width="3" height="8" rx="1" fill="#333740"/>
+                    <rect x="9" y="1.5" width="3" height="10.5" rx="1" fill="#333740"/>
+                    <rect x="13.5" y="0" width="3" height="12" rx="1" fill="#333740"/>
+                  </svg>
+                  <!-- WiFi -->
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+                    <path d="M8 9.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#333740"/>
+                    <path d="M3.5 6.5C4.9 5.1 6.4 4.3 8 4.3s3.1.8 4.5 2.2" stroke="#333740" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                    <path d="M1 3.5C3.2 1.3 5.5 0 8 0s4.8 1.3 7 3.5" stroke="#333740" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                  </svg>
+                  <!-- Battery -->
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                    <rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="#333740" stroke-opacity="0.35"/>
+                    <rect x="1.5" y="1.5" width="18" height="9" rx="2.5" fill="#333740"/>
+                    <path d="M22.5 4v4a2 2 0 0 0 0-4z" fill="#333740" fill-opacity="0.4"/>
+                  </svg>
+                </div>
+              </div>
+              <!-- Header row -->
+              <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;height:68px;background:#fff;flex-shrink:0;">
+                <h1 style="flex:1 0 0;font-family:'Inter',sans-serif;font-size:28px;font-weight:600;line-height:36px;letter-spacing:-0.56px;color:#1c1c1c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0;">Заголовок</h1>
+                <!-- Action btn with badge -->
+                <button style="position:relative;width:40px;height:40px;flex-shrink:0;background:var(--color-surface-raised,#fff);border-radius:100px;border:1px solid var(--color-border-divider,#e6e6e6);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 0-6 6v2.586l-1.293 1.293A1 1 0 0 0 3.414 13.5H16.586a1 1 0 0 0 .707-1.621L16 10.586V8a6 6 0 0 0-6-6zm0 16a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2z" fill="var(--color-icon-secondary,#676767)"/></svg>
+                  <span style="position:absolute;top:0;right:0;width:16px;height:16px;border-radius:8px;background:var(--color-badge-background,#f3404c);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;color:#fff;line-height:14px;">1</span>
+                </button>
+                <!-- Action btn plain -->
+                <button style="width:40px;height:40px;flex-shrink:0;background:var(--color-surface-raised,#fff);border-radius:100px;border:1px solid var(--color-border-divider,#e6e6e6);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6" r="3" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.5"/><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Save Area / Home Indicator -->
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Save Area (iOS Home Indicator)</span></div>
+          <div class="comp-block-body" style="padding:24px;background:#e8e8e8;align-items:center;justify-content:center;">
+            <div style="width:375px;background:#fff;border-radius:12px;overflow:hidden;">
+              <div style="position:relative;width:100%;height:40px;">
+                <div style="position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:100px;background:#2e3241;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anatomy -->
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Размеры зон</span></div>
+          <div class="comp-block-body" style="flex-direction:column;gap:8px;padding:20px;">
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#9a9a9a;flex-shrink:0;"></div>
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">UI Bars (Status Bar)</span>
+              <span style="font-size:13px;color:#676767;">375×44px · время left:47px · иконки right:20px</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--color-primary-500,#bfa369);flex-shrink:0;"></div>
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">Header</span>
+              <span style="font-size:13px;color:#676767;">375×68px · padding 14px 16px · title H4/600/28px · action-btn 40×40px r:100px</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#6366f1;flex-shrink:0;"></div>
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">Badge на кнопке</span>
+              <span style="font-size:13px;color:#676767;">16×16px · r:8px · bg:#f3404c · font:10px/600</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;"></div>
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">Save Area</span>
+              <span style="font-size:13px;color:#676767;">375×40px · pill 134×5px · r:100px · bottom:9px · bg:#2e3241</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NAVBAR -->
+      <section class="section" id="navbar">
+        <div class="section-header">
+          <div class="section-tag">Organisms</div>
+          <h2 class="section-title">Navbar</h2>
+          <p class="section-desc">Глобальная верхняя навигация десктоп: лого + nav-links (молекулы) + поиск + action-иконки + avatar dropdown. H: 64px, border-bottom.</p>
+        </div>
+
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Navbar — Desktop</span></div>
+          <div class="comp-block-body" style="padding:0;flex-direction:column;gap:0;">
+            <!-- Navbar -->
+            <nav style="display:flex;align-items:center;height:64px;padding:0 24px;background:var(--color-surface-default,#f2f2f2);border-bottom:1px solid var(--color-border-default,#cdcdcd);gap:0;width:100%;box-sizing:border-box;">
+              <!-- Logo -->
+              <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                <div style="width:32px;height:32px;border-radius:8px;background:var(--color-primary-500,#bfa369);display:flex;align-items:center;justify-content:center;">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z" fill="white"/></svg>
+                </div>
+                <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--color-text-primary,#1c1c1c);letter-spacing:-0.16px;">Solar3</span>
+              </div>
+              <!-- Nav links -->
+              <div style="display:flex;align-items:center;gap:4px;margin-left:24px;flex:1;">
+                <a href="#" style="padding:8px 12px;border-radius:8px;background:rgba(191,163,105,0.12);font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--color-primary-700,#7a6741);text-decoration:none;white-space:nowrap;">Главная</a>
+                <a href="#" style="padding:8px 12px;border-radius:8px;font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--color-text-secondary,#676767);text-decoration:none;white-space:nowrap;">Компоненты</a>
+                <a href="#" style="padding:8px 12px;border-radius:8px;font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--color-text-secondary,#676767);text-decoration:none;white-space:nowrap;">Токены</a>
+                <a href="#" style="padding:8px 12px;border-radius:8px;font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--color-text-secondary,#676767);text-decoration:none;white-space:nowrap;">Паттерны</a>
+              </div>
+              <!-- Right: search + icons + avatar -->
+              <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                <!-- Search -->
+                <div style="display:flex;align-items:center;gap:8px;background:var(--color-surface-raised,#fff);border:1px solid var(--color-border-divider,#e6e6e6);border-radius:10px;padding:0 12px;height:36px;min-width:180px;">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.3"/><path d="M10.5 10.5l3 3" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.3" stroke-linecap="round"/></svg>
+                  <span style="font-family:'Inter',sans-serif;font-size:13px;color:var(--color-text-tertiary,#9a9a9a);">Поиск...</span>
+                </div>
+                <!-- Notification -->
+                <button style="width:36px;height:36px;border-radius:100px;background:var(--color-surface-raised,#fff);border:1px solid var(--color-border-divider,#e6e6e6);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 0-6 6v2.586l-1.293 1.293A1 1 0 0 0 3.414 13.5H16.586a1 1 0 0 0 .707-1.621L16 10.586V8a6 6 0 0 0-6-6zm0 16a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2z" fill="var(--color-icon-secondary,#676767)"/></svg>
+                  <span style="position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:7px;background:#f3404c;font-family:'Inter',sans-serif;font-size:9px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center;">3</span>
+                </button>
+                <!-- Avatar -->
+                <div style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+                  <div style="width:36px;height:36px;border-radius:100px;background:var(--color-surface-dark,#1c1c1c);display:flex;align-items:center;justify-content:center;">
+                    <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#fff;">АК</span>
+                  </div>
+                  <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--color-text-primary,#1c1c1c);">Алексей</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Токены -->
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Размеры</span></div>
+          <div class="comp-block-body" style="flex-direction:column;gap:8px;padding:20px;">
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">Высота</span><span style="font-size:13px;color:#676767;">64px · padding-x: var(--spacing-6) desktop / var(--spacing-4) mobile</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">Border</span><span style="font-size:13px;color:#676767;">1px solid var(--color-border-default) · bottom only</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--color-surface-default,#f2f2f2);border-radius:8px;">
+              <span style="font-size:14px;font-weight:500;color:#1c1c1c;flex:1;">Scroll state</span><span style="font-size:13px;color:#676767;">sticky + var(--shadow-sm) при скролле мимо 0px</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIDENAV -->
+      <section class="section" id="sidenav">
+        <div class="section-header">
+          <div class="section-tag">Organisms</div>
+          <h2 class="section-title">Sidenav</h2>
+          <p class="section-desc">Левая навигационная панель. Expanded 288px / Collapsed 84px. Nav Items с иконками, подменю, коннектор-линия. Нижняя зона «Свернуть».</p>
+        </div>
+
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Sidenav — Expanded (288px) с активным подменю</span></div>
+          <div class="comp-block-body" style="padding:0;align-items:stretch;min-height:420px;">
+            <nav style="display:flex;flex-direction:column;width:288px;background:#f7f8fc;overflow:hidden;flex-shrink:0;" aria-label="Основная навигация">
+              <!-- Top section -->
+              <div style="display:flex;flex-direction:column;gap:24px;padding:24px;flex:1;overflow-y:auto;overflow-x:hidden;">
+                <!-- Logo -->
+                <div style="width:56px;height:32px;background:var(--color-primary-500,#bfa369);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+                  <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#fff;letter-spacing:-0.5px;">SOLAR3</span>
+                </div>
+                <!-- Nav list -->
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <!-- Active item with submenu -->
+                  <div>
+                    <button style="display:flex;align-items:center;gap:4px;height:40px;padding:8px 12px;border-radius:8px;width:100%;background:rgba(59,121,255,0.8);border:none;cursor:pointer;">
+                      <span style="display:flex;align-items:center;gap:8px;flex:1;min-width:0;">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke="white" stroke-width="1.5" fill="none"/></svg>
+                        <span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:18px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Контакты</span>
+                      </span>
+                      <span style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 10l4-4 4 4" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                    </button>
+                    <!-- Submenu -->
+                    <div style="display:flex;align-items:flex-start;padding-left:12px;">
+                      <div style="display:flex;flex-direction:column;align-items:center;width:20px;padding:0 9px;align-self:stretch;flex-shrink:0;">
+                        <div style="width:2px;height:40px;flex-shrink:0;background:rgba(59,121,255,0.8);"></div>
+                        <div style="flex:1;width:1px;background:#d9dee8;"></div>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;">
+                        <a href="#" style="display:flex;align-items:center;height:40px;padding:8px 10px 8px 12px;border-radius:8px;background:rgba(59,121,255,0.15);text-decoration:none;">
+                          <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;line-height:18px;color:#1c62fa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Физические лица</span>
+                        </a>
+                        <a href="#" style="display:flex;align-items:center;height:40px;padding:8px 10px 8px 12px;border-radius:8px;text-decoration:none;">
+                          <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;line-height:18px;color:#2c2d2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Юридические лица</span>
+                        </a>
+                        <a href="#" style="display:flex;align-items:center;height:40px;padding:8px 10px 8px 12px;border-radius:8px;text-decoration:none;">
+                          <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;line-height:18px;color:#2c2d2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Агенты</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Regular items -->
+                  <a href="#" style="display:flex;align-items:center;gap:8px;height:40px;padding:8px 12px;border-radius:8px;background:transparent;text-decoration:none;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/></svg>
+                    <span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:18px;color:#2c2d2e;">Агентская сеть</span>
+                  </a>
+                  <a href="#" style="display:flex;align-items:center;gap:8px;height:40px;padding:8px 12px;border-radius:8px;background:transparent;text-decoration:none;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 9l4 4 4-4" stroke="#2c2d2e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="14" height="14" rx="3" stroke="#2c2d2e" stroke-width="1.5"/></svg>
+                    <span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:18px;color:#2c2d2e;">Договоры</span>
+                  </a>
+                  <a href="#" style="display:flex;align-items:center;gap:8px;height:40px;padding:8px 12px;border-radius:8px;background:transparent;text-decoration:none;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2zm0 4v4l3 3" stroke="#2c2d2e" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:18px;color:#2c2d2e;">Отчёты</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Bottom: collapse -->
+              <div style="flex-shrink:0;background:rgba(59,121,255,0.05);">
+                <button style="display:flex;align-items:center;gap:8px;padding:24px 32px;width:100%;background:none;border:none;cursor:pointer;text-align:left;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 5l-4 5 4 5M4 10h12" stroke="#57595b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;line-height:18px;color:#57595b;white-space:nowrap;">Свернуть</span>
+                </button>
+              </div>
+            </nav>
+            <!-- Content area preview -->
+            <div style="flex:1;background:var(--color-surface-default,#f2f2f2);padding:24px;display:flex;align-items:flex-start;">
+              <div style="background:#fff;border-radius:12px;padding:20px;width:100%;border:1px solid var(--color-border-divider,#e6e6e6);">
+                <span style="font-family:'Inter',sans-serif;font-size:14px;color:var(--color-text-tertiary,#9a9a9a);">Контент страницы</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Sidenav — Collapsed (84px)</span></div>
+          <div class="comp-block-body" style="padding:0;align-items:stretch;min-height:300px;">
+            <nav style="display:flex;flex-direction:column;width:84px;background:#f7f8fc;overflow:hidden;flex-shrink:0;">
+              <div style="display:flex;flex-direction:column;gap:8px;padding:24px 12px;flex:1;">
+                <div style="width:40px;height:40px;border-radius:8px;background:rgba(59,121,255,0.8);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" stroke="white" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <div style="width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.5" stroke="#2c2d2e" stroke-width="1.5"/></svg>
+                </div>
+                <div style="width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2zm0 4v4l3 3" stroke="#2c2d2e" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div style="flex-shrink:0;background:rgba(59,121,255,0.05);">
+                <button style="display:flex;align-items:center;justify-content:center;padding:24px;width:100%;background:none;border:none;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 5l4 5-4 5M16 10H4" stroke="#57595b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </nav>
+            <div style="flex:1;background:var(--color-surface-default,#f2f2f2);padding:24px;display:flex;align-items:flex-start;">
+              <div style="background:#fff;border-radius:12px;padding:20px;width:100%;border:1px solid var(--color-border-divider,#e6e6e6);">
+                <span style="font-family:'Inter',sans-serif;font-size:14px;color:var(--color-text-tertiary,#9a9a9a);">Контент страницы (expanded area)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tokens -->
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Токены навигации</span></div>
+          <div class="comp-block-body" style="flex-direction:column;gap:8px;padding:20px;">
+            <div style="display:flex;align-items:center;gap:16px;padding:10px 16px;background:rgba(59,121,255,0.1);border-radius:8px;">
+              <div style="width:16px;height:16px;border-radius:3px;background:rgba(59,121,255,0.8);flex-shrink:0;"></div>
+              <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#1c1c1c;flex:1;">Active item bg</span>
+              <code style="font-size:12px;color:#676767;">rgba(59,121,255,0.8)</code>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:10px 16px;background:rgba(59,121,255,0.1);border-radius:8px;">
+              <div style="width:16px;height:16px;border-radius:3px;background:rgba(59,121,255,0.15);border:1px solid rgba(59,121,255,0.3);flex-shrink:0;"></div>
+              <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#1c1c1c;flex:1;">Active submenu item bg</span>
+              <code style="font-size:12px;color:#676767;">rgba(59,121,255,0.15)</code>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;padding:10px 16px;background:rgba(59,121,255,0.1);border-radius:8px;">
+              <div style="width:16px;height:16px;border-radius:3px;background:#f7f8fc;border:1px solid #d9dee8;flex-shrink:0;"></div>
+              <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#1c1c1c;flex:1;">Panel bg</span>
+              <code style="font-size:12px;color:#676767;">--color-surface-app: #f7f8fc</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOPPANEL -->
+      <section class="section" id="toppanel">
+        <div class="section-header">
+          <div class="section-tag">Organisms</div>
+          <h2 class="section-title">Toppanel</h2>
+          <p class="section-desc">Верхняя панель приложения. LG (desktop, 81px): «Назад» + иконки + divider + account + logout. SM (mobile, 72px): account + иконки.</p>
+        </div>
+
+        <!-- LG -->
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Toppanel LG — Desktop (fluid × 81px)</span></div>
+          <div class="comp-block-body" style="padding:0;flex-direction:column;">
+            <header style="display:flex;align-items:center;width:100%;height:81px;padding:16px 24px;background:var(--color-surface-default,#f2f2f2);border-bottom:1px solid var(--color-border-divider,#e6e6e6);box-sizing:border-box;gap:0;">
+              <!-- Back button -->
+              <button style="display:flex;align-items:center;gap:12px;height:48px;padding:0 20px;border-radius:12px;border:none;background:transparent;font-family:'Inter',sans-serif;font-size:16px;font-weight:600;line-height:22px;letter-spacing:-0.16px;color:var(--color-text-accent-secondary,#7a6741);cursor:pointer;white-space:nowrap;flex-shrink:0;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 5L8 10l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Назад
+              </button>
+              <!-- Right section -->
+              <div style="display:flex;align-items:center;gap:24px;flex:1;justify-content:flex-end;min-width:0;">
+                <!-- Icon buttons -->
+                <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+                  <button style="width:48px;height:48px;border-radius:100px;background:var(--color-surface-raised,#fff);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 0-6 6v2.586l-1.293 1.293A1 1 0 0 0 3.414 13.5H16.586a1 1 0 0 0 .707-1.621L16 10.586V8a6 6 0 0 0-6-6zm0 16a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2z" fill="var(--color-icon-secondary,#676767)"/></svg>
+                  </button>
+                  <button style="width:48px;height:48px;border-radius:100px;background:var(--color-surface-raised,#fff);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6.5" r="3.5" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+                <!-- Divider -->
+                <div style="width:1px;height:26px;background:var(--color-border-divider,#e6e6e6);flex-shrink:0;"></div>
+                <!-- Account -->
+                <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+                  <div style="width:48px;height:48px;border-radius:100px;background:var(--color-surface-dark,#1c1c1c);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="7" r="3" stroke="white" stroke-width="1.5"/></svg>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:0;flex-shrink:0;">
+                    <button style="display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:0;font-family:'Inter',sans-serif;font-size:18px;font-weight:500;line-height:24px;letter-spacing:-0.18px;color:var(--color-text-primary,#1c1c1c);white-space:nowrap;">
+                      ООО «Планета Здоровья»
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <span style="font-family:'Inter',sans-serif;font-size:16px;font-weight:400;line-height:22px;letter-spacing:-0.16px;color:var(--color-text-secondary,#676767);white-space:nowrap;">Кузнецов Михаил</span>
+                  </div>
+                </div>
+                <!-- Logout -->
+                <div style="display:flex;align-items:center;gap:24px;flex-shrink:0;">
+                  <div style="width:1px;height:26px;background:var(--color-border-divider,#e6e6e6);"></div>
+                  <button style="width:24px;height:24px;background:none;border:none;padding:0;cursor:pointer;color:var(--color-text-secondary,#676767);display:flex;align-items:center;justify-content:center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+
+        <!-- SM -->
+        <div class="comp-block">
+          <div class="comp-block-header"><span class="comp-block-name">Toppanel SM — Mobile (375×72px)</span></div>
+          <div class="comp-block-body" style="padding:24px;background:#e8e8e8;align-items:center;justify-content:center;">
+            <header style="display:flex;align-items:center;justify-content:space-between;width:375px;height:72px;padding:16px;background:var(--color-surface-default,#f2f2f2);box-sizing:border-box;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+              <!-- Account -->
+              <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;max-width:220px;">
+                <div style="width:40px;height:40px;border-radius:100px;background:var(--color-surface-dark,#1c1c1c);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="7" r="3" stroke="white" stroke-width="1.5"/></svg>
+                </div>
+                <div style="display:flex;flex-direction:column;min-width:0;width:161px;">
+                  <button style="display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:0;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--color-text-primary,#1c1c1c);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;">
+                    <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">ООО «Планета Зд...</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:400;line-height:18px;letter-spacing:-0.13px;color:var(--color-text-secondary,#676767);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Кузнецов Михаил</span>
+                </div>
+              </div>
+              <!-- Icon buttons -->
+              <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                <button style="width:40px;height:40px;border-radius:100px;background:var(--color-surface-raised,#fff);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 0-6 6v2.586l-1.293 1.293A1 1 0 0 0 3.414 13.5H16.586a1 1 0 0 0 .707-1.621L16 10.586V8a6 6 0 0 0-6-6zm0 16a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2z" fill="var(--color-icon-secondary,#676767)"/></svg>
+                </button>
+                <button style="width:40px;height:40px;border-radius:100px;background:var(--color-surface-raised,#fff);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6.5" r="3.5" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134 7 7-7s7 3.134 7 7" stroke="var(--color-icon-secondary,#676767)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </header>
           </div>
         </div>
       </section>
