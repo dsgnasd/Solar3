@@ -1,7 +1,7 @@
 # Input Atom — Solar3 Design System
 
-> Source: Figma → `tokens.json` → `breakpoints.*.uIInputOutline*`  
-> Last updated: 2026-03-27  
+> Source: Figma → `tokens.json` → `breakpoints.*.uIInputOutline*`
+> Last updated: 2026-03-27
 > Status: ✅ Complete
 
 ---
