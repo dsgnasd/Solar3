@@ -1,0 +1,488 @@
+/* ==========================================================================
+   Solar3 Design System — Token Definitions
+   Source of truth: Figma → tokens.json + Color Alias/*
+   Last updated: 2026-03-27
+   Font: Inter (Google Fonts)
+
+   MULTI-BRAND SUPPORT
+   ═══════════════════
+   Three brands available, switched via [data-brand] on <html>:
+     - "kib-premium"   (default) — Gold palette
+     - "pwa-win"                 — Violet palette
+     - "strakhovanie"            — Lime palette
+
+   Usage:
+     <html data-brand="kib-premium">   ← or omit for default
+     <html data-brand="pwa-win">
+     <html data-brand="strakhovanie">
+
+   ⚠️  DO NOT edit raw values manually.
+       Update Figma → re-export tokens.json → update this file.
+   ========================================================================== */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. SHARED (BRAND-AGNOSTIC) TOKENS
+   ══════════════════════════════════════════════════════════════════════════ */
+:root {
+
+  /* --------------------------------------------------------------------------
+     NEUTRAL PALETTE (identical across all brands — Grey primitives)
+  -------------------------------------------------------------------------- */
+  --color-neutral-0:    #ffffff;
+  --color-neutral-50:   #fafafa;
+  --color-neutral-100:  #f2f2f2;
+  --color-neutral-200:  #e6e6e6;
+  --color-neutral-300:  #d9d9d9;
+  --color-neutral-400:  #cdcdcd;
+  --color-neutral-500:  #b2b2b2;
+  --color-neutral-600:  #9a9a9a;
+  --color-neutral-700:  #818181;
+  --color-neutral-800:  #676767;
+  --color-neutral-900:  #4f4f4f;
+  --color-neutral-1000: #3d3d3d;
+  --color-neutral-black:#1c1c1c;
+  --color-neutral-black5: #1c1c1c0c;  /* Black 5% alpha */
+
+  /* ERROR PALETTE (identical across all brands — Red primitives) */
+  --color-error-50:   #fff2f1;
+  --color-error-100:  #ffe5e4;
+  --color-error-200:  #fecdce;
+  --color-error-300:  #fca5a6;
+  --color-error-400:  #fa7277;
+  --color-error-500:  #f3404c;
+  --color-error-600:  #e32f43;
+  --color-error-700:  #bd132b;
+  --color-error-800:  #9e132a;
+  --color-error-900:  #87142b;
+  --color-error-1000: #4c0511;
+
+  /* --------------------------------------------------------------------------
+     SURFACE / SEMANTIC SLOTS (shared, based on neutral palette)
+     Source: colorMapped.lightTheme
+  -------------------------------------------------------------------------- */
+  --color-surface-default:  #f2f2f2;  /* backgroundPrimary = neutral-100 */
+  --color-surface-raised:   #ffffff;  /* backgroundSecondary = white */
+  --color-surface-overlay:  #ffffff;
+  --color-surface-sunken:   #e6e6e6;  /* backgroundTertiary = neutral-200 */
+  --color-surface-dark:     #1c1c1c;  /* backgroundDark */
+  --color-surface-light:    #fafafa;  /* backgroundLight = neutral-50 */
+  --color-surface-disabled: #b2b2b2;  /* backgroundDisabled = neutral-500 */
+  --color-surface-disabled-transparent: #1c1c1c0c;
+
+  /* TEXT (shared) */
+  --color-text-primary:    #1c1c1c;
+  --color-text-secondary:  #676767;
+  --color-text-tertiary:   #9a9a9a;
+  --color-text-disabled:   #b2b2b2;
+  --color-text-inverse:    #ffffff;
+  --color-text-on-brand:   #ffffff;  /* textOnAccentPrimary */
+
+  /* ICON (shared) */
+  --color-icon-primary:    #1c1c1c;
+  --color-icon-secondary:  #676767;
+  --color-icon-tertiary:   #9a9a9a;
+  --color-icon-on-brand:   #ffffff;
+  --color-icon-light:      #cdcdcd;
+
+  /* BORDER (shared base) */
+  --color-border-default:   #cdcdcd;  /* neutral-400 */
+  --color-border-divider:   #e6e6e6;  /* neutral-200 */
+  --color-border-strong:    #1c1c1c;  /* black */
+  --color-border-disabled:  #9a9a9a;  /* neutral-600 */
+  --color-border-hover:     #9a9a9a;
+  --color-border-pressed:   #676767;
+
+  /* BORDER — Error (shared) */
+  --color-border-error:             #e32f43;  /* error-600 */
+  --color-border-error-hover:       #bd132b;  /* error-700 */
+  --color-border-error-pressed:     #9e132a;  /* error-800 */
+
+  /* BADGE (shared) */
+  --color-badge-background: #f3404c;  /* error-500 */
+
+  /* --------------------------------------------------------------------------
+     TYPOGRAPHY (shared)
+  -------------------------------------------------------------------------- */
+  --font-family-base:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-family-display: 'Inter', sans-serif;
+
+  --font-weight-light:   300;
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-semibold:600;
+  --font-weight-bold:    700;
+
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-48: 48px;
+
+  --line-height-10: 14px;
+  --line-height-12: 16px;
+  --line-height-13: 18px;
+  --line-height-14: 20px;
+  --line-height-16: 22px;
+  --line-height-18: 24px;
+  --line-height-20: 28px;
+  --line-height-24: 32px;
+  --line-height-28: 36px;
+  --line-height-32: 40px;
+  --line-height-36: 44px;
+  --line-height-48: 56px;
+
+  --line-height-tight:   1.2;
+  --line-height-normal:  1.43;
+  --line-height-relaxed: 1.625;
+
+  --letter-spacing-tight:  -0.02em;
+  --letter-spacing-normal:  0;
+  --letter-spacing-wide:    0.08em;
+
+  /* --------------------------------------------------------------------------
+     SPACING
+  -------------------------------------------------------------------------- */
+  --spacing-0:  0;
+  --spacing-1:  2px;
+  --spacing-2:  4px;
+  --spacing-3:  6px;
+  --spacing-4:  8px;
+  --spacing-5:  10px;
+  --spacing-6:  12px;
+  --spacing-8:  16px;
+  --spacing-10: 20px;
+  --spacing-12: 24px;
+  --spacing-14: 28px;
+  --spacing-16: 32px;
+  --spacing-18: 36px;
+  --spacing-20: 40px;
+  --spacing-22: 44px;
+  --spacing-24: 48px;
+  --spacing-26: 52px;
+
+  /* --------------------------------------------------------------------------
+     BORDER RADIUS
+  -------------------------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-2xs:  2px;
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* --------------------------------------------------------------------------
+     ICON SIZES
+  -------------------------------------------------------------------------- */
+  --icon-size-xs:  12px;
+  --icon-size-sm:  16px;
+  --icon-size-md:  20px;
+  --icon-size-lg:  24px;
+
+  /* --------------------------------------------------------------------------
+     SHADOWS / ELEVATION
+  -------------------------------------------------------------------------- */
+  --shadow-none: none;
+  --shadow-xs:   0 1px 2px rgba(28, 28, 28, 0.06);
+  --shadow-sm:   0 2px 8px rgba(28, 28, 28, 0.08);
+  --shadow-md:   0 4px 16px rgba(28, 28, 28, 0.10);
+  --shadow-lg:   0 8px 32px rgba(28, 28, 28, 0.12);
+  --shadow-xl:   0 16px 48px rgba(28, 28, 28, 0.16);
+
+  /* --------------------------------------------------------------------------
+     MOTION
+  -------------------------------------------------------------------------- */
+  --duration-instant: 0ms;
+  --duration-fast:    100ms;
+  --duration-normal:  200ms;
+  --duration-slow:    300ms;
+  --duration-slower:  500ms;
+
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-in:      cubic-bezier(0.4, 0, 1, 1);
+  --easing-out:     cubic-bezier(0, 0, 0.2, 1);
+  --easing-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --------------------------------------------------------------------------
+     Z-INDEX
+  -------------------------------------------------------------------------- */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:    10;
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+  --z-tooltip:   600;
+
+  /* --------------------------------------------------------------------------
+     GRID / LAYOUT
+  -------------------------------------------------------------------------- */
+  --grid-columns:  12;
+  --grid-gutter:   24px;
+  --grid-margin:   16px;
+
+  --bp-sm:  375px;
+  --bp-md:  768px;
+  --bp-lg:  1140px;
+  --bp-xl:  1920px;
+
+  --container-sm:  375px;
+  --container-md:  684px;
+  --container-lg:  1056px;
+  --container-xl:  1836px;
+
+  --sidebar-collapsed-width: 84px;
+  --sidebar-expanded-width:  252px;
+  --header-height: 56px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. BRAND: КИБ Premium (DEFAULT)
+      Primary/Secondary → Gold (КИБ)
+      Success → Green (teal)
+      Warning → Orange
+      Info    → Blue
+   ══════════════════════════════════════════════════════════════════════════ */
+:root,
+[data-brand="kib-premium"] {
+
+  /* ── PRIMARY (Gold) ───────────────────────────────────────────────────── */
+  --color-primary-50:   #fff9f0;
+  --color-primary-100:  #fcf4e7;
+  --color-primary-200:  #efe5d1;
+  --color-primary-300:  #eaddc2;
+  --color-primary-400:  #d9c8a5;
+  --color-primary-500:  #bfa369;
+  --color-primary-600:  #aa9262;
+  --color-primary-700:  #968154;
+  --color-primary-800:  #7a6741;
+  --color-primary-900:  #685835;
+  --color-primary-1000: #4d4127;
+
+  /* ── SECONDARY (= Gold for КИБ) ──────────────────────────────────────── */
+  --color-secondary-50:   #fff9f0;
+  --color-secondary-100:  #fcf4e7;
+  --color-secondary-200:  #efe5d1;
+  --color-secondary-300:  #eaddc2;
+  --color-secondary-400:  #d9c8a5;
+  --color-secondary-500:  #bfa369;
+  --color-secondary-600:  #aa9262;
+  --color-secondary-700:  #968154;
+  --color-secondary-800:  #7a6741;
+  --color-secondary-900:  #685835;
+  --color-secondary-1000: #4d4127;
+
+  /* ── SUCCESS (Green / teal) ───────────────────────────────────────────── */
+  --color-success-50:   #f1f8f4;
+  --color-success-100:  #dcefe4;
+  --color-success-200:  #bcdecb;
+  --color-success-300:  #90c5ac;
+  --color-success-400:  #61a688;
+  --color-success-500:  #3f8a6b;
+  --color-success-600:  #307359;
+  --color-success-700:  #255745;
+  --color-success-800:  #1f4638;
+  --color-success-900:  #1a3a2f;
+  --color-success-1000: #0e201b;
+
+  /* ── WARNING (Orange) ─────────────────────────────────────────────────── */
+  --color-warning-50:   #fbf7eb;
+  --color-warning-100:  #f5eccc;
+  --color-warning-200:  #edd79b;
+  --color-warning-300:  #e3bb61;
+  --color-warning-400:  #d9a136;
+  --color-warning-500:  #c98b29;
+  --color-warning-600:  #ad6c21;
+  --color-warning-700:  #93531f;
+  --color-warning-800:  #74401f;
+  --color-warning-900:  #633620;
+  --color-warning-1000: #391b0f;
+
+  /* ── INFO (Blue) ──────────────────────────────────────────────────────── */
+  --color-info-50:   #f1f9fe;
+  --color-info-100:  #e3f2fb;
+  --color-info-200:  #c0e5f7;
+  --color-info-300:  #89d1f0;
+  --color-info-400:  #4abae6;
+  --color-info-500:  #23a1d4;
+  --color-info-600:  #1582b4;
+  --color-info-700:  #126791;
+  --color-info-800:  #135779;
+  --color-info-900:  #154a65;
+  --color-info-1000: #0e2f43;
+
+  /* ── SEMANTIC ALIASES (composed from palette above) ────────────────────
+     These are the tokens you use in components.
+  -------------------------------------------------------------------------- */
+  --color-brand-primary:         var(--color-primary-500);
+  --color-brand-primary-hover:   var(--color-primary-600);
+  --color-brand-primary-pressed: var(--color-primary-700);
+  --color-brand-primary-subtle:  var(--color-primary-200);
+  --color-brand-secondary:       var(--color-primary-300);
+  --color-brand-accent:          var(--color-primary-1000);
+
+  --color-text-accent:          var(--color-primary-1000);
+  --color-text-accent-secondary:var(--color-primary-800);
+  --color-text-error:           var(--color-error-700);
+  --color-text-success:         var(--color-success-600);
+  --color-text-warning:         var(--color-warning-700);
+  --color-text-info:            var(--color-info-700);
+
+  --color-icon-accent:          var(--color-primary-1000);
+  --color-icon-accent-secondary:var(--color-primary-800);
+
+  --color-bg-accent-primary:          var(--color-primary-500);
+  --color-bg-accent-primary-hover:    var(--color-primary-600);
+  --color-bg-accent-primary-pressed:  var(--color-primary-700);
+  --color-bg-accent-secondary:        var(--color-primary-200);
+  --color-bg-accent-secondary-hover:  var(--color-primary-300);
+  --color-bg-accent-secondary-pressed:var(--color-primary-400);
+  --color-bg-success:          var(--color-success-100);
+  --color-bg-success-hover:    var(--color-success-200);
+  --color-bg-success-pressed:  var(--color-success-300);
+  --color-bg-error:            var(--color-error-100);
+  --color-bg-error-hover:      var(--color-error-200);
+  --color-bg-error-pressed:    var(--color-error-300);
+  --color-bg-warning:          var(--color-warning-100);
+  --color-bg-warning-hover:    var(--color-warning-200);
+  --color-bg-warning-pressed:  var(--color-warning-300);
+  --color-bg-info:             var(--color-info-100);
+  --color-bg-info-hover:       var(--color-info-200);
+  --color-bg-info-pressed:     var(--color-info-300);
+
+  --color-border-focus:         var(--color-primary-500);
+  --color-border-focus-hover:   var(--color-primary-800);
+  --color-border-focus-pressed: var(--color-primary-1000);
+  --color-border-accent:        var(--color-primary-500);
+  --color-border-success:       var(--color-success-500);
+  --color-border-warning:       var(--color-warning-500);
+  --color-border-info:          var(--color-info-400);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. BRAND: PWA, WIN
+      Primary/Secondary → Violet (PWA, WIN)
+      Success → Green (teal) — same as КИБ
+      Warning → Orange — same as КИБ
+      Info    → Blue — same as КИБ
+   ══════════════════════════════════════════════════════════════════════════ */
+[data-brand="pwa-win"] {
+
+  /* ── PRIMARY (Violet) ─────────────────────────────────────────────────── */
+  --color-primary-50:   #f5f6ff;
+  --color-primary-100:  #e9ecff;
+  --color-primary-200:  #d1e0ff;
+  --color-primary-300:  #b4cafd;
+  --color-primary-400:  #7f9bfa;
+  --color-primary-500:  #6177f3;
+  --color-primary-600:  #4450e7;
+  --color-primary-700:  #1942ae;
+  --color-primary-800:  #2d3582;
+  --color-primary-900:  #1a1d4c;
+  --color-primary-1000: #141622;
+
+  /* ── SECONDARY (= Violet for PWA) ─────────────────────────────────────── */
+  --color-secondary-50:   #f5f6ff;
+  --color-secondary-100:  #e9ecff;
+  --color-secondary-200:  #d1e0ff;
+  --color-secondary-300:  #b4cafd;
+  --color-secondary-400:  #7f9bfa;
+  --color-secondary-500:  #6177f3;
+  --color-secondary-600:  #4450e7;
+  --color-secondary-700:  #1942ae;
+  --color-secondary-800:  #2d3582;
+  --color-secondary-900:  #1a1d4c;
+  --color-secondary-1000: #141622;
+
+  /* Success, Warning, Info, Error — inherited from :root (same as КИБ) */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. BRAND: Страхование
+      Primary/Secondary → Lime (Страхование)
+      Success → Green (Страхование) — DIFFERENT from КИБ/PWA
+      Warning → Yellow — DIFFERENT from КИБ/PWA
+      Info    → Teal/Cyan — DIFFERENT from КИБ/PWA
+   ══════════════════════════════════════════════════════════════════════════ */
+[data-brand="strakhovanie"] {
+
+  /* ── PRIMARY (Lime) ───────────────────────────────────────────────────── */
+  --color-primary-50:   #f2faeb;
+  --color-primary-100:  #e2f3d3;
+  --color-primary-200:  #c9e7b1;
+  --color-primary-300:  #afda90;
+  --color-primary-400:  #95cb71;
+  --color-primary-500:  #7aba54;
+  --color-primary-600:  #659d43;
+  --color-primary-700:  #517b37;
+  --color-primary-800:  #3d5a2a;
+  --color-primary-900:  #283a1d;
+  --color-primary-1000: #131b0e;
+
+  /* ── SECONDARY (= Lime for Страхование) ───────────────────────────────── */
+  --color-secondary-50:   #f2faeb;
+  --color-secondary-100:  #e2f3d3;
+  --color-secondary-200:  #c9e7b1;
+  --color-secondary-300:  #afda90;
+  --color-secondary-400:  #95cb71;
+  --color-secondary-500:  #7aba54;
+  --color-secondary-600:  #659d43;
+  --color-secondary-700:  #517b37;
+  --color-secondary-800:  #3d5a2a;
+  --color-secondary-900:  #283a1d;
+  --color-secondary-1000: #131b0e;
+
+  /* ── SUCCESS (Green / Страхование — pure green, NOT teal) ─────────────── */
+  --color-success-50:   #effaf2;
+  --color-success-100:  #d8f3e0;
+  --color-success-200:  #afe5bd;
+  --color-success-300:  #8ad19e;
+  --color-success-400:  #5cb072;
+  --color-success-500:  #3d8f52;
+  --color-success-600:  #347c47;
+  --color-success-700:  #2e613b;
+  --color-success-800:  #1c5228;
+  --color-success-900:  #064114;
+  --color-success-1000: #042f0e;
+
+  /* ── WARNING (Yellow — NOT orange) ────────────────────────────────────── */
+  --color-warning-50:   #fdfbed;
+  --color-warning-100:  #f7f3c2;
+  --color-warning-200:  #f1ea9d;
+  --color-warning-300:  #e8df7d;
+  --color-warning-400:  #e0d452;
+  --color-warning-500:  #d0c225;
+  --color-warning-600:  #b6aa20;
+  --color-warning-700:  #7b7508;
+  --color-warning-800:  #6b6404;
+  --color-warning-900:  #585203;
+  --color-warning-1000: #312e02;
+
+  /* ── INFO (Teal/Cyan — NOT blue) ──────────────────────────────────────── */
+  --color-info-50:   #f3fbfc;
+  --color-info-100:  #d7f2f4;
+  --color-info-200:  #b5e6e9;
+  --color-info-300:  #94d8dd;
+  --color-info-400:  #7bc8d1;
+  --color-info-500:  #53b8c3;
+  --color-info-600:  #3f9eaa;
+  --color-info-700:  #377d84;
+  --color-info-800:  #2e5e61;
+  --color-info-900:  #223f41;
+  --color-info-1000: #142222;
+}
